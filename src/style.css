@@ -1,0 +1,481 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --primary-color: rgba(132, 31, 31, 0.774);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+main {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+}
+
+.slider-container {
+  flex-grow: 1;
+  background-color: black;
+  background-image: url("images/redLinesMore.jpeg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  position: relative;
+  width: 80%;
+  height: 90%;
+  overflow: hidden;
+  border-radius: 2em;
+}
+
+.slider {
+  display: flex;
+  width: 800%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 1s ease;
+}
+
+.slide {
+  width: 12.5%;
+  font-size: 1.6em;
+  font-family: "Montserrat";
+  text-align: center;
+  color: rgba(255, 206, 171, 0.709);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4em;
+  border-radius: 2em;
+}
+
+.slide-timer {
+  gap: 2.5em;
+  padding-top: 0.5em;
+}
+
+.slide-timer .slider-images {
+  margin-top: 1em;
+}
+
+.slide p {
+  margin: 0 3em 0 3em;
+}
+
+.slide img {
+  width: 20%;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.right-arrow {
+  width: 3.5em;
+  margin-left: 2em;
+}
+
+.left-arrow {
+  width: 3.5em;
+  margin-right: 2em;
+}
+
+.slide-button {
+  align-items: center;
+  background-color: #bf6464;
+  border: 0.2em #000000 solid;
+  border-radius: 1.5em;
+  width: 12em;
+  height: 3em;
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 0.7em;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
+  background-color: var(--primary-color);
+  width: 90%;
+  height: 85%;
+  border-radius: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 6em;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10em;
+  height: 30%;
+  width: 80%;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #7b0804;
+  border: 0.2em #000000 solid;
+  border-radius: 1.5em;
+  width: 100%;
+  font-size: 1.1em;
+  font-family: "Montserrat";
+  color: rgba(255, 206, 171, 0.709);
+}
+
+.number {
+  border: 0;
+  outline: 0;
+  border-radius: 0.25rem;
+  font-size: 3em;
+  width: 5rem;
+  height: 5rem;
+  text-align: center;
+  margin-right: 0.5rem;
+  background-color: rgba(255, 206, 171, 0.709);
+  border: 0.1rem #000000 solid;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.up,
+.down {
+  display: block;
+  transform: rotate(90deg);
+  width: 1em;
+  height: 1em;
+}
+
+.up img,
+.down img {
+  width: 100%;
+  height: 100%;
+}
+
+.btn-container {
+  height: 2.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-body-images {
+  width: 100%;
+  height: auto;
+}
+
+.button-start-game {
+  color: #000000;
+  font-size: 1.7em;
+  font-family: "Montserrat";
+  background-color: #d5130cdc;
+  border: 0.1em #000000 solid;
+  border-radius: 0.7em;
+  padding: 1em 2em;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-players-name {
+  color: rgba(255, 206, 171, 0.909);
+  font-size: 0.8em;
+  font-family: "Montserrat";
+  background-color: #bd3d39;
+  border: 0.1em #000000 solid;
+  border-radius: 0.5em;
+  padding: 0.2em 0.7em;
+  margin-top: 0.5em;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-players-name:hover {
+  background-color: #bd3e39be;
+  transform: scale(1.05);
+}
+
+#nameModal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#nameInputs {
+  margin: 1em;
+}
+
+#nameInputs input {
+  margin: 0.4em;
+  padding-left: 0.5em;
+  width: 60%;
+  height: 2em;
+  background-color: rgba(255, 206, 171, 0.709);
+  border: none;
+  border-radius: 0.5em;
+}
+
+.modal-content {
+  background-color: #bd3d39;
+  margin: 10% auto;
+  padding: 20px;
+  width: 25em;
+  border-radius: 10px;
+}
+
+.modal-content button {
+  color: rgba(255, 206, 171, 0.709);
+  font-size: 0.9em;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  background-color: #bc150fc8;
+}
+
+.close {
+  float: right;
+  font-size: 1.7em;
+  cursor: pointer;
+}
+
+.game-page {
+  margin: 0;
+  padding: 0;
+  background-image: url(images/redLinesMore.jpeg);
+  background-size: cover;
+}
+
+.ref-index-back {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.904);
+  padding: 0.6rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  transition: background 0.3s ease;
+}
+
+.ref-index-back-section {
+  align-self: flex-start;
+  margin-left: 2rem;
+  margin-top: 2rem;
+}
+
+.main-game {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: auto;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+.game-panel {
+  width: min(1100px, 92vw);
+  height: auto;
+  background: rgba(0, 0, 0, 0.859);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5em;
+  padding: 2.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+}
+
+.game-top {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.eyebrow {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+}
+
+.game-heading {
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  margin: 0.25rem 0;
+  font-size: 2rem;
+}
+
+.game-sub {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1rem;
+}
+
+.game-hint {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+}
+
+.role-card {
+  margin-top: 1.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.1em;
+  padding: 1.5rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.card-label {
+  color: rgba(255, 255, 255, 0.65);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+  margin-bottom: 0.35rem;
+}
+
+.role-title {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.role-body {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.ghost-btn,
+.button-ghost {
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 0.75em;
+  padding: 0.75em 1.4em;
+  background: rgba(255, 255, 255, 0.06);
+  font-family: "Montserrat";
+  letter-spacing: 0.01em;
+  transition: all 0.25s ease;
+}
+
+.ghost-btn:hover,
+.button-ghost:hover {
+  border-color: rgba(255, 255, 255, 0.55);
+  transform: translateY(-2px);
+}
+
+.helper {
+  margin-top: 0.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+.timer-stack {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.timer-window {
+  background-color: #7b0804df;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  width: 1100;
+  border-radius: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.timer {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.timer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.button-start-timer {
+  color: #000000;
+  font-size: 1.1em;
+  font-family: "Montserrat";
+  background-color: #d5130cdc;
+  border: 0.1em #000000 solid;
+  border-radius: 0.7em;
+  padding: 0.9em 1.8em;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.button-start-timer:hover:enabled {
+  background-color: #ff0800;
+  color: rgba(255, 206, 171, 0.909);
+  transform: scale(1.02);
+}
+
+.game-note {
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  margin: 0.5rem 0 0;
+}
+
+.spy-reveal {
+  margin-top: 0.75rem;
+  color: #ffe2b8;
+  font-size: 1rem;
+  font-weight: 600;
+}

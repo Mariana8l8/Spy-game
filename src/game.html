@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPY GAME</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body class="game-page">
+    <main class="main-game">
+      <section class="game-panel">
+        <div class="game-top">
+          <p class="eyebrow">Раунд готовий</p>
+          <h1 class="game-heading" id="playerPrompt">
+            Передайте пристрій гравцю 1
+          </h1>
+          <p class="game-sub" id="gameSummary">
+            Гравців: 3 · Шпигунів: 1 · Таймер: 5 хв
+          </p>
+          <p class="game-hint">
+            Локація обрана випадково та з'явиться у вашій картці.
+          </p>
+        </div>
+
+        <div class="role-card" id="roleCard">
+          <p class="card-label" id="playerLabel">Гравець 1</p>
+          <div class="role-content">
+            <p class="role-title" id="roleTitle">Твоя роль</p>
+            <p class="role-body" id="roleBody">
+              Натисни «Показати роль», щоб дізнатися свої дані. Прикрий екран,
+              щоб інші не підглядали.
+            </p>
+          </div>
+          <div class="card-actions">
+            <button class="ghost-btn" id="revealBtn">Показати роль</button>
+            <button class="ghost-btn" id="nextPlayerBtn" disabled>
+              Сховати і передати далі
+            </button>
+          </div>
+          <p class="helper" id="roleHelper">
+            Натисни «Показати роль», тримай у секреті від інших.
+          </p>
+        </div>
+
+        <div class="timer-stack">
+          <div class="timer-window">
+            <div class="timer">05 : 00</div>
+          </div>
+          <div class="timer-actions">
+            <button class="button-ghost" id="backToMenuBtn">
+              ← Змінити налаштування
+            </button>
+          </div>
+        </div>
+
+        <p class="game-note">
+          Коли час закінчиться, ми покажемо, хто був шпигуном, і нагадаємо
+          локацію.
+        </p>
+        <p id="spyReveal" class="spy-reveal" style="display: none"></p>
+      </section>
+    </main>
+  </body>
+</html>

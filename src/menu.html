@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MENU</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <img class="menu-body-images" src="images/redLinesMore.jpeg" />
+    <main class="main-menu">
+      <menu class="menu">
+        <section class="ref-index-back-section">
+          <a class="ref-index-back" href="index.html">← НА ГОЛОВНУ</a>
+        </section>
+        <div class="grid-container">
+          <div class="item">
+            <p>КІЛЬКІСТЬ ГРАВЦІВ</p>
+            <div class="container">
+              <input class="number" type="text" data-type="players" />
+              <div class="btn-container">
+                <button class="up" data-type="buttonUpPlayers">
+                  <img src="images/left-arrow.png" />
+                </button>
+                <button class="down" data-type="buttonDownPlayers">
+                  <img src="images/right-arrow.png" />
+                </button>
+              </div>
+            </div>
+            <button class="btn-players-name" onclick="openNameModal()">
+              ІМЕНА ГРАВЦІВ
+            </button>
+            <div id="nameModal">
+              <div class="modal-content">
+                <span class="close" onclick="closeNameModal()">&times;</span>
+                <h2>Введіть імена гравців</h2>
+                <div id="nameInputs"></div>
+                <button onclick="saveNames()">Зберегти</button>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <p>КІЛЬКІСТЬ ШПИГУНІВ</p>
+            <div class="container">
+              <input class="number" type="text" data-type="spy" />
+              <div class="btn-container">
+                <button class="up" data-type="buttonUpSpy">
+                  <img src="images/left-arrow.png" />
+                </button>
+                <button class="down" data-type="buttonDownSpy">
+                  <img src="images/right-arrow.png" />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <p>ТАЙМЕР (ХВИЛИН)</p>
+            <div class="container">
+              <input class="number" type="text" data-type="timer" />
+              <div class="btn-container">
+                <button class="up" data-type="buttonUpSpyTimer">
+                  <img src="images/left-arrow.png" />
+                </button>
+                <button class="down" data-type="buttonDownTimer">
+                  <img src="images/right-arrow.png" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section>
+          <button class="button-start-game">LET'S PLAY!!!</button>
+        </section>
+      </menu>
+    </main>
+  </body>
+</html>
